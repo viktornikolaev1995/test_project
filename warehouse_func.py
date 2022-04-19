@@ -30,9 +30,9 @@ def analyse(programm: list[tuple[str, int, Optional[str]]]) -> int:
                 else:
                     """начальный номер ящика, с которого нужно будет начать выгрузку, чтобы в последствии выгрузить 
                     нужный ящик со склада"""
-                    beginning_relief_box = 0
+                    number_of_unloaded_box = 0
                     for box_, params in warehouse.items():
-                        beginning_relief_box += 1
+                        number_of_unloaded_box += 1
                         if box_ == box:
                             break
 
@@ -40,8 +40,10 @@ def analyse(programm: list[tuple[str, int, Optional[str]]]) -> int:
                     со склада"""
                     quantity_of_boxes_to_relieve = 0
                     quantity_of_boxes_in_warehouse = len(warehouse)  # текущее количество ящиков на складе
-                    for _ in range(beginning_relief_box, quantity_of_boxes_in_warehouse):
+                    for _ in range(number_of_unloaded_box, quantity_of_boxes_in_warehouse):
                         relieve_box, params = warehouse.popitem(last=True)
+                        print(relieve_box)
+                        print(params)
                         quantity_of_boxes_to_relieve += 1
                         temp_warehouse.update({relieve_box: params})
 

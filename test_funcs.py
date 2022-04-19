@@ -1,8 +1,8 @@
-import pytest
 from warehouse_func import analyse
+from promo_func import calculate
 
 
-def test_anylyse_func():
+def test_anylyse():
     programm = [
         ('принять', 46, 'загрузить на вход'),
         ('выгрузить', 46),
@@ -43,3 +43,10 @@ def test_anylyse_func():
         ('выгрузить', 3),
     ]
     assert analyse(programm) == 6
+
+
+def test_calculate():
+    assert calculate(m=6, n=4, p=[1, 2, 4, 5]) == 12
+    assert calculate(m=10, n=7, p=[10, 1, 2, 3, 4, 8, 7]) == 51
+    assert calculate(m=3, n=3, p=[6, 2, 3]) == 12
+    assert calculate(m=3, n=3, p=[2, 4, 8]) == 14
