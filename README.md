@@ -1,23 +1,36 @@
 # Тестовое задание на должность Junior Python Developer
-## Инструкция по развертыванию проекта
 
 Склонировать репозиторий: 
 ```bash
 git clone https://github.com/viktornikolaev1995/test_project.git
 ```
 
-### Настройка проекта
+Перейти в папку проекта: 
+```bash
+cd test_project
+```
 
-Перейти в папку проекта: `cd 
-test_project`
+Создать виртуальное окружение:
+```bash
+python -m venv venv
+```
 
-### Установка pytest для тестирования
+Запустить виртуальное окружение:
+```bash
+source venv/bin/activate на Mac/Linux
+```
+
+```bash
+source venv/Scripts/activate на Windows
+```
+
+Установить pytest
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Запуск тестов
+### Тестирование
 
 ```bash
 pytest -v
